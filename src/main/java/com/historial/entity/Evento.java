@@ -4,68 +4,57 @@ import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "eventos")
+@Table(name = "history_favorite")
 public class Evento {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long idHistory;
 
-    private Long usuarioId;
+    private Long itemFavorite;
 
-    private Long productoId;
+    private String action;
 
-    private String accion;
-
-    private LocalDateTime fecha;
+    private LocalDateTime dateAction;
 
     public Evento() {
     }
 
-    public Evento(Long usuarioId, Long productoId, String accion, LocalDateTime fecha) {
-        this.usuarioId = usuarioId;
-        this.productoId = productoId;
-        this.accion = accion;
-        this.fecha = fecha;
+    public Evento(Long itemFavorite, String action, LocalDateTime dateAction) {
+        this.itemFavorite = itemFavorite;
+        this.action = action;
+        this.dateAction = dateAction;
     }
 
-    public Long getId() {
-        return id;
+    public Long getIdHistory() {
+        return idHistory;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setIdHistory(Long idHistory) {
+        this.idHistory = idHistory;
     }
 
-    public Long getUsuarioId() {
-        return usuarioId;
+    public Long getItemFavorite() {
+        return itemFavorite;
     }
 
-    public void setUsuarioId(Long usuarioId) {
-        this.usuarioId = usuarioId;
+    public void setItemFavorite(Long itemFavorite) {
+        this.itemFavorite = itemFavorite;
     }
 
-    public Long getProductoId() {
-        return productoId;
+    public String getAction() {
+        return action;
     }
 
-    public void setProductoId(Long productoId) {
-        this.productoId = productoId;
+    public void setAction(String action) {
+        this.action = action;
     }
 
-    public String getAccion() {
-        return accion;
+    public LocalDateTime getDateAction() {
+        return dateAction;
     }
 
-    public void setAccion(String accion) {
-        this.accion = accion;
-    }
-
-    public LocalDateTime getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(LocalDateTime fecha) {
-        this.fecha = fecha;
+    public void setDateAction(LocalDateTime dateAction) {
+        this.dateAction = dateAction;
     }
 }
