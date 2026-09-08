@@ -25,4 +25,10 @@ public class EventoController {
     public List<EventoDTO> listarPorProducto(@PathVariable Long itemFavorite) {
         return eventoService.listarPorProducto(itemFavorite);
     }
+
+    @PostMapping("/test")
+    public String registrarPrueba(@RequestParam Long itemFavorite, @RequestParam String action) {
+        eventoService.registrarEvento(itemFavorite, action);
+        return "Evento registrado correctamente";
+    }
 }
