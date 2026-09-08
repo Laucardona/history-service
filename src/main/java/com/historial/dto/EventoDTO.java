@@ -1,5 +1,53 @@
 package com.historial.dto;
 
+import java.time.LocalDateTime;
+
 public class EventoDTO {
-    
+
+    private Long idHistory;
+    private Long itemFavorite;
+    private String action;
+    private LocalDateTime dateAction;
+
+    public EventoDTO() {
+    }
+
+    public EventoDTO(Long idHistory, Long itemFavorite, String action, LocalDateTime dateAction) {
+        this.idHistory = idHistory;
+        this.itemFavorite = itemFavorite;
+        this.action = action;
+        this.dateAction = dateAction;
+    }
+
+    public Long getIdHistory() {
+        return idHistory;
+    }
+
+    public void setIdHistory(Long idHistory) {
+        this.idHistory = idHistory;
+    }
+
+    public Long getItemFavorite() {
+        return itemFavorite;
+    }
+
+    public void setItemFavorite(Long itemFavorite) {
+        this.itemFavorite = itemFavorite;
+    }
+
+    public String getAction() {
+        return action;
+    }
+
+    public void setAction(String action) {
+        this.action = action;
+    }
+
+    public LocalDateTime getDateAction() {
+        return dateAction;
+    }
+
+    public void setDateAction(LocalDateTime dateAction) {
+        this.dateAction = dateAction;
+    }
 }
