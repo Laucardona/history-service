@@ -3,7 +3,7 @@ package com.historial.entity;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
-@Entit
+@Entity
 @Table(name = "history_favorite")
 public class Evento {
 
