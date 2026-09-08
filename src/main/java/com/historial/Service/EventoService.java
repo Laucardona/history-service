@@ -18,13 +18,11 @@ public class EventoService {
         this.eventoRepository = eventoRepository;
     }
 
-    // Método que llaman otros módulos (Deseo) cada vez que pasa algo
     public Evento registrarEvento(Long itemFavorite, String action) {
         Evento evento = new Evento(itemFavorite, action, LocalDateTime.now());
         return eventoRepository.save(evento);
     }
 
-    // Listar todo el histórico completo
     public List<EventoDTO> listarTodo() {
         return eventoRepository.findAllByOrderByDateActionDesc()
                 .stream()
@@ -32,7 +30,6 @@ public class EventoService {
                 .collect(Collectors.toList());
     }
 
-    // Listar histórico de un producto puntual
     public List<EventoDTO> listarPorProducto(Long itemFavorite) {
         return eventoRepository.findByItemFavoriteOrderByDateActionDesc(itemFavorite)
                 .stream()
