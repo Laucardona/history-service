@@ -18,8 +18,8 @@ public class EventoService {
         this.eventoRepository = eventoRepository;
     }
 
-    public Evento registrarEvento(Long itemFavorite, String action) {
-        Evento evento = new Evento(itemFavorite, action, LocalDateTime.now());
+    public Evento registrarEvento(Long idItemFavorite, String action) {
+        Evento evento = new Evento(idItemFavorite, action, LocalDateTime.now());
         return eventoRepository.save(evento);
     }
 
@@ -30,8 +30,8 @@ public class EventoService {
                 .collect(Collectors.toList());
     }
 
-    public List<EventoDTO> listarPorProducto(Long itemFavorite) {
-        return eventoRepository.findByItemFavoriteOrderByDateActionDesc(itemFavorite)
+    public List<EventoDTO> listarPorProducto(Long idItemFavorite) {
+        return eventoRepository.findByIdItemFavoriteOrderByDateActionDesc(idItemFavorite)
                 .stream()
                 .map(this::convertirADTO)
                 .collect(Collectors.toList());
@@ -40,7 +40,7 @@ public class EventoService {
     private EventoDTO convertirADTO(Evento evento) {
         return new EventoDTO(
                 evento.getIdHistory(),
-                evento.getItemFavorite(),
+                evento.getIdItemFavorite(),
                 evento.getAction(),
                 evento.getDateAction()
         );
