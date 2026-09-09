@@ -11,7 +11,7 @@ public class Evento {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idHistory;
 
-    private Long itemFavorite;
+    private Long idItemFavorite;
 
     private String action;
 
@@ -20,8 +20,8 @@ public class Evento {
     public Evento() {
     }
 
-    public Evento(Long itemFavorite, String action, LocalDateTime dateAction) {
-        this.itemFavorite = itemFavorite;
+    public Evento(Long idItemFavorite, String action, LocalDateTime dateAction) {
+        this.idItemFavorite = idItemFavorite;
         this.action = action;
         this.dateAction = dateAction;
     }
@@ -34,12 +34,12 @@ public class Evento {
         this.idHistory = idHistory;
     }
 
-    public Long getItemFavorite() {
-        return itemFavorite;
+    public Long getIdItemFavorite() {
+        return idItemFavorite;
     }
 
-    public void setItemFavorite(Long itemFavorite) {
-        this.itemFavorite = itemFavorite;
+    public void setIdItemFavorite(Long idItemFavorite) {
+        this.idItemFavorite = idItemFavorite;
     }
 
     public String getAction() {

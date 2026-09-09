@@ -5,16 +5,16 @@ import java.time.LocalDateTime;
 public class EventoDTO {
 
     private Long idHistory;
-    private Long itemFavorite;
+    private Long idItemFavorite;
     private String action;
     private LocalDateTime dateAction;
 
     public EventoDTO() {
     }
 
-    public EventoDTO(Long idHistory, Long itemFavorite, String action, LocalDateTime dateAction) {
+    public EventoDTO(Long idHistory, Long idItemFavorite, String action, LocalDateTime dateAction) {
         this.idHistory = idHistory;
-        this.itemFavorite = itemFavorite;
+        this.idItemFavorite = idItemFavorite;
         this.action = action;
         this.dateAction = dateAction;
     }
@@ -27,12 +27,12 @@ public class EventoDTO {
         this.idHistory = idHistory;
     }
 
-    public Long getItemFavorite() {
-        return itemFavorite;
+    public Long getIdItemFavorite() {
+        return idItemFavorite;
     }
 
-    public void setItemFavorite(Long itemFavorite) {
-        this.itemFavorite = itemFavorite;
+    public void setIdItemFavorite(Long idItemFavorite) {
+        this.idItemFavorite = idItemFavorite;
     }
 
     public String getAction() {

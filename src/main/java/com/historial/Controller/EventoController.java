@@ -21,14 +21,14 @@ public class EventoController {
         return eventoService.listarTodo();
     }
 
-    @GetMapping("/producto/{itemFavorite}")
-    public List<EventoDTO> listarPorProducto(@PathVariable Long itemFavorite) {
-        return eventoService.listarPorProducto(itemFavorite);
+    @GetMapping("/producto/{idItemFavorite}")
+    public List<EventoDTO> listarPorProducto(@PathVariable Long idItemFavorite) {
+        return eventoService.listarPorProducto(idItemFavorite);
     }
 
     @PostMapping("/test")
-    public String registrarPrueba(@RequestParam Long itemFavorite, @RequestParam String action) {
-        eventoService.registrarEvento(itemFavorite, action);
+    public String registrarPrueba(@RequestParam Long idItemFavorite, @RequestParam String action) {
+        eventoService.registrarEvento(idItemFavorite, action);
         return "Evento registrado correctamente";
     }
 }
