@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface EventoRepository extends JpaRepository<Evento, Long> {
 
-    List<Evento> findByItemFavoriteOrderByDateActionDesc(Long itemFavorite);
+    List<Evento> findByIdItemFavoriteOrderByDateActionDesc(Long idItemFavorite);
 
     List<Evento> findAllByOrderByDateActionDesc();
 }
